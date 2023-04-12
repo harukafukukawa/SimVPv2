@@ -44,6 +44,6 @@ python tools/non_dist_train.py -d cracks --lr 1e-3 -c ./configs/cracks/SimVP.py 
 <br>
 <br>
 
-# Adding new models
+## Adding new models
 
 /simvp/utils/parser.py add to --method argument choices

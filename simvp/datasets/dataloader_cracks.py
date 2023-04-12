@@ -3,14 +3,13 @@ import torch
 from torch.utils.data import Dataset
 from .video_dataset import VideoFolder, video_loader, make_dataset, find_videos
 import torchvision.transforms as transforms
+import os
 
 
 def load_data(batch_size, val_batch_size, data_root, num_workers=4, pre_seq_length=5, aft_seq_length=1):
-    img_width = 128
-    validation_batch_size = 1
-    num_workers = 4
-    train_set_path = './data/cracks/train'
-    test_set_path = './data/cracks/test'
+
+    train_set_path = os.path.join(data_root, "cracks/train")
+    test_set_path = os.path.join(data_root, "cracks/test")
 
     transform_video = transforms.Compose([transforms.Resize(
         size=(128, 128), interpolation=Image.NEAREST), transforms.ToTensor(),])
@@ -59,33 +58,3 @@ class Cracks(VideoFolder):
         self.transform = transform
         self.mean = 0
         self.std = 1
-
-# below is load data from taxibj
-
-
-'''
-def load_data(batch_size, val_batch_size, data_root,
-              num_workers=4, pre_seq_length=None, aft_seq_length=None):
-
-    dataset = np.load(data_root+'taxibj/dataset.npz')
-    X_train, Y_train, X_test, Y_test = dataset['X_train'], dataset[
-        'Y_train'], dataset['X_test'], dataset['Y_test']
-    train_set = TaxibjDataset(X=X_train, Y=Y_train)
-    test_set = TaxibjDataset(X=X_test, Y=Y_test)
-
-    dataloader_train = torch.utils.data.DataLoader(train_set,
-                                                   batch_size=batch_size, shuffle=True,
-                                                   pin_memory=True, drop_last=True,
-                                                   num_workers=num_workers)
-    dataloader_vali = torch.utils.data.DataLoader(test_set,
-                                                  batch_size=val_batch_size, shuffle=False,
-                                                  pin_memory=True, drop_last=True,
-                                                  num_workers=num_workers)
-    dataloader_test = torch.utils.data.DataLoader(test_set,
-                                                  batch_size=val_batch_size, shuffle=False,
-                                                  pin_memory=True, drop_last=True,
-                                                  num_workers=num_workers)
-
-    return dataloader_train, dataloader_vali, dataloader_test
-
-'''

@@ -4,3 +4,26 @@ Killed manually
 ---CrevNet---
 Config: CrevNet.py
 ERROR: See cracks_CrevNet_lr1e-3_err.txt for details
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 1215.2772943973541
+Test time (s): 1681378218.730294
+MSE: 559.2491455078125
+---CrevNet---
+Config: CrevNet.py
+ERROR: See cracks_CrevNet_lr1e-3_err.txt for details
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 3293.368285894394
+Test time (s): 1681381518.3972094
+MSE: 1124.437744140625
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 2269.982502937317
+Test time (s): 1681383791.2842147
+MSE: 570.2014770507812
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 2416.476182937622
+Test time (s): 1681386210.565716
+MSE: 976.67919921875

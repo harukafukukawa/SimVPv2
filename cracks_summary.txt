@@ -1,0 +1,6 @@
+---ConvLSTM---
+Config: ConvLSTM.py
+Killed manually
+---CrevNet---
+Config: CrevNet.py
+ERROR: See cracks_CrevNet_lr1e-3_err.txt for details

@@ -60,3 +60,59 @@ Config: SimVP.py
 Train time (s): 720.2561798095703
 Test time (s): 1681396680.5934033
 MSE: 626.4986572265625
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 1095.3895342350006
+Test time (s): 1681437089.7894673
+MSE: 559.2491455078125
+---CrevNet---
+Config: CrevNet.py
+ERROR: See cracks_CrevNet_lr5e-3_err.txt for details
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 3132.984105348587
+Test time (s): 1681440228.829641
+MSE: 1124.437744140625
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 2226.0099465847015
+Test time (s): 1681442457.8202488
+MSE: 570.2014770507812
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 2552.6768040657043
+Test time (s): 1681445013.4324238
+MSE: 976.67919921875
+---SimVP---
+Config: SimVP.py
+Train time (s): 774.5291614532471
+Test time (s): 1681445790.8013916
+MSE: 574.111083984375
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 1232.6703033447266
+Test time (s): 1681447026.0842762
+MSE: 772.0938720703125
+---CrevNet---
+Config: CrevNet.py
+ERROR: See cracks_CrevNet_lr1e-2_err.txt for details
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 3285.6202721595764
+Test time (s): 1681450317.9046235
+MSE: 609.8486328125
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 2204.759147167206
+Test time (s): 1681452525.5346165
+MSE: 623.0269775390625
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 2580.6178674697876
+Test time (s): 1681455109.0491652
+MSE: 973.851806640625
+---SimVP---
+Config: SimVP.py
+Train time (s): 710.5367438793182
+Test time (s): 1681455822.6500382
+MSE: 626.4986572265625

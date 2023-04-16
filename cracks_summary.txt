@@ -116,3 +116,16 @@ Config: SimVP.py
 Train time (s): 710.5367438793182
 Test time (s): 1681455822.6500382
 MSE: 626.4986572265625
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 1275.1683423519135
+Test time (s): 1681647755.5869129
+MSE: 554.8363037109375
+---CrevNet---
+Config: CrevNet.py
+ERROR: See cracks_CrevNet_4_err.txt for details
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 3482.2936613559723
+Test time (s): 1681651243.691456
+MSE: 573.525634765625

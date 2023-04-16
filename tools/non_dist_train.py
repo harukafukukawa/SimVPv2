@@ -32,6 +32,13 @@ if __name__ == '__main__':
     exp.train()
 
     print('>'*35 + ' testing  ' + '<'*35)
-    mse = exp.test()
+
+    return_all_metrics=True
+
+    if return_all_metrics:
+        eval_res = exp.test(return_all_metrics=return_all_metrics)
+        mse = eval_res['mse']
+    else:
+        mse = exp.test()
     if has_nni:
         nni.report_final_result(mse)

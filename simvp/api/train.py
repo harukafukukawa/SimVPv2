@@ -250,7 +250,7 @@ class NonDistExperiment(object):
 
         return val_loss
 
-    def test(self):
+    def test(self, return_all_metrics=False):
         if self.args.test:
             best_model_path = osp.join(self.path, 'checkpoint.pth')
             self.method.model.load_state_dict(torch.load(best_model_path))
@@ -273,4 +273,5 @@ class NonDistExperiment(object):
 
         for np_data in ['metrics', 'inputs', 'trues', 'preds']:
             np.save(osp.join(folder_path, np_data + '.npy'), vars()[np_data])
-        return eval_res['mse']
+
+        return eval_res if return_all_metrics else eval_res['mse']

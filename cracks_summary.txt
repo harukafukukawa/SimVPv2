@@ -295,3 +295,21 @@ Killed manually
 ---SimVP---
 Config: SimVP.py
 Killed manually
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 990.7994933128357
+Test time (s): 1681706445.097258
+MSE: 571.371337890625
+---CrevNet---
+Config: CrevNet.py
+ERROR: See cracks_CrevNet_0.000001_err.txt for details
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 2923.545441865921
+Test time (s): 1681709374.9126794
+MSE: 568.804931640625
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 1900.5999801158905
+Test time (s): 1681711278.4909682
+MSE: 555.0936279296875

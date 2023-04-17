@@ -63,7 +63,7 @@ if __name__ == '__main__':
         print('>'*35 + ' testing  ' + '<'*35)
         test_time = time.time() - start_time_test
         exp_records_df.loc[len(exp_records_df)-1, "test_time"] = test_time
-        summary_for_log_file += f"Test time (s): {start_time_test}\n"
+        summary_for_log_file += f"Test time (s): {test_time}\n"
 
         return_all_metrics=True
 

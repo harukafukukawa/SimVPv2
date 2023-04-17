@@ -262,7 +262,7 @@ class NonDistExperiment(object):
         if 'weather' in self.args.dataname:
             metric_list, spatial_norm = ['mse', 'rmse', 'mae'], True
         else:
-            metric_list, spatial_norm = ['mse', 'mae', 'ssim', 'psnr'], False
+            metric_list, spatial_norm = ['mse', 'mae', 'ssim', 'psnr', 'fid'], False
         eval_res, eval_log = metric(preds, trues, self.test_loader.dataset.mean, self.test_loader.dataset.std,
                                     metrics=metric_list, spatial_norm=spatial_norm)
         metrics = np.array([eval_res['mae'], eval_res['mse']])

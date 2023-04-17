@@ -65,8 +65,17 @@ if __name__ == '__main__':
         exp_records_df.loc[len(exp_records_df)-1, "test_time"] = test_time
         summary_for_log_file += f"Test time (s): {start_time_test}\n"
 
-        mse = exp.test()
-        exp_records_df.loc[len(exp_records_df)-1, "mse"] = mse
+        return_all_metrics=True
+
+        if return_all_metrics:
+            eval_res = exp.test(return_all_metrics=return_all_metrics)
+            mse = eval_res['mse']
+            for metric in eval_res:
+                exp_records_df.loc[len(exp_records_df)-1, metric] = eval_res[metric]
+        else:
+            mse = exp.test()
+            exp_records_df.loc[len(exp_records_df)-1, "mse"] = mse
+
         summary_for_log_file += f"MSE: {mse}\n"
         if has_nni:
             nni.report_final_result(mse)

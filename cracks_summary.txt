@@ -313,3 +313,13 @@ Config: PredRNN.py
 Train time (s): 1900.5999801158905
 Test time (s): 1681711278.4909682
 MSE: 555.0936279296875
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 1978.5726335048676
+Test time (s): 1.9311904907226562e-05
+MSE: 840.2272338867188
+---SimVP---
+Config: SimVP.py
+Train time (s): 607.9085869789124
+Test time (s): 2.0503997802734375e-05
+MSE: 580.38720703125

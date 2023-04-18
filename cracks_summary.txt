@@ -334,3 +334,33 @@ ERROR: See cracks_CrevNet_0.00001_err.txt for details
 ---PredRNNpp---
 Config: PredRNNpp.py
 Killed manually
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 1670.0180687904358
+Test time (s): 1.9073486328125e-05
+MSE: 789.734619140625
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 4309.895080566406
+Test time (s): 2.1457672119140625e-05
+MSE: 798.9771728515625
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 2988.5814378261566
+Test time (s): 2.1696090698242188e-05
+MSE: 687.67822265625
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 3214.1052508354187
+Test time (s): 2.1219253540039062e-05
+MSE: 804.959228515625
+---SimVP---
+Config: SimVP.py
+Train time (s): 1040.0738661289215
+Test time (s): 2.0503997802734375e-05
+MSE: 592.8804931640625
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 679.4623255729675
+Test time (s): 2.6464462280273438e-05
+MSE: 560.180419921875

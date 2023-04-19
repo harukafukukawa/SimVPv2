@@ -364,3 +364,216 @@ Config: ConvLSTM.py
 Train time (s): 679.4623255729675
 Test time (s): 2.6464462280273438e-05
 MSE: 560.180419921875
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 1858.3629302978516
+Test time (s): 2.09808349609375e-05
+MSE: 1014.2867431640625
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 1308.9959144592285
+Test time (s): 2.1696090698242188e-05
+MSE: 569.6122436523438
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 1534.542992591858
+Test time (s): 2.765655517578125e-05
+MSE: 1053.8740234375
+---SimVP---
+Config: SimVP.py
+Train time (s): 496.02794075012207
+Test time (s): 2.1219253540039062e-05
+MSE: 609.6243286132812
+---ConvLSTM---
+Config: ConvLSTM.py
+ERROR: See cracks_ConvLSTM_0.00001_err.txt for details
+---PredRNNpp---
+Config: PredRNNpp.py
+ERROR: See cracks_PredRNNpp_0.00001_err.txt for details
+---PredRNN---
+Config: PredRNN.py
+ERROR: See cracks_PredRNN_0.00001_err.txt for details
+---PredRNNv2---
+Config: PredRNNv2.py
+ERROR: See cracks_PredRNNv2_0.00001_err.txt for details
+---SimVP---
+Config: SimVP.py
+ERROR: See cracks_SimVP_0.00001_err.txt for details
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 2230.1595556735992
+Test time (s): 2.5987625122070312e-05
+MSE: 1472.813720703125
+---PredRNNpp---
+Config: PredRNNpp.py
+Killed manually
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 961.1126778125763
+Test time (s): 2.0503997802734375e-05
+MSE: 1312.05908203125
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 2723.6920561790466
+Test time (s): 2.09808349609375e-05
+MSE: 1245.6414794921875
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 1831.34627866745
+Test time (s): 2.0265579223632812e-05
+MSE: 1203.89306640625
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 1959.870671749115
+Test time (s): 2.3603439331054688e-05
+MSE: 1173.4017333984375
+---SimVP---
+Config: SimVP.py
+Train time (s): 605.0979342460632
+Test time (s): 1.9311904907226562e-05
+MSE: 750.1532592773438
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 1734.2913241386414
+Test time (s): 2.7179718017578125e-05
+MSE: 1229.025390625
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 4888.638295173645
+Test time (s): 1.9311904907226562e-05
+MSE: 1300.715087890625
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 3494.429347038269
+Test time (s): 1.9550323486328125e-05
+MSE: 1244.232666015625
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 3589.574179172516
+Test time (s): 2.1219253540039062e-05
+MSE: 1298.8065185546875
+---SimVP---
+Config: SimVP.py
+Train time (s): 1090.2788767814636
+Test time (s): 2.2172927856445312e-05
+MSE: 1101.8187255859375
+---ConvLSTM---
+Config: ConvLSTM.py
+ERROR: See cracks_ConvLSTM_0.000001_err.txt for details
+---PredRNNpp---
+Config: PredRNNpp.py
+ERROR: See cracks_PredRNNpp_0.000001_err.txt for details
+---PredRNN---
+Config: PredRNN.py
+ERROR: See cracks_PredRNN_0.000001_err.txt for details
+---PredRNNv2---
+Config: PredRNNv2.py
+ERROR: See cracks_PredRNNv2_0.000001_err.txt for details
+---SimVP---
+Config: SimVP.py
+ERROR: See cracks_SimVP_0.000001_err.txt for details
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 1629.2573971748352
+Test time (s): 2.574920654296875e-05
+MSE: 1225.2437744140625
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 4241.836889505386
+Test time (s): 2.6702880859375e-05
+MSE: 1226.819580078125
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 2989.621655702591
+Test time (s): 2.0503997802734375e-05
+MSE: 1229.4979248046875
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 3247.5991365909576
+Test time (s): 2.765655517578125e-05
+MSE: 1240.496337890625
+---SimVP---
+Config: SimVP.py
+Train time (s): 1167.7493331432343
+Test time (s): 1.9311904907226562e-05
+MSE: 605.0421142578125
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 1512.3579630851746
+Test time (s): 1.9550323486328125e-05
+MSE: 759.0538330078125
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 4298.169429063797
+Test time (s): 2.3126602172851562e-05
+MSE: 711.389892578125
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 2907.042937040329
+Test time (s): 2.0503997802734375e-05
+MSE: 695.259521484375
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 3154.543735265732
+Test time (s): 2.002716064453125e-05
+MSE: 1016.180908203125
+---SimVP---
+Config: SimVP.py
+Train time (s): 939.5309028625488
+Test time (s): 2.3603439331054688e-05
+MSE: 715.1417846679688
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 548.6843218803406
+Test time (s): 2.2411346435546875e-05
+MSE: 1233.250244140625
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 1530.793080329895
+Test time (s): 2.5272369384765625e-05
+MSE: 15894.734375
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 1060.6786000728607
+Test time (s): 2.5033950805664062e-05
+MSE: 1023.6253662109375
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 1136.918585062027
+Test time (s): 2.6941299438476562e-05
+MSE: 1045.3896484375
+---SimVP---
+Config: SimVP.py
+Train time (s): 336.28613352775574
+Test time (s): 1.9073486328125e-05
+MSE: 1047.525146484375
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 606.3144404888153
+Test time (s): 2.0503997802734375e-05
+MSE: 1207.3165283203125
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 1730.0299677848816
+Test time (s): 1.9550323486328125e-05
+MSE: 1226.50244140625
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 1203.479756116867
+Test time (s): 1.8835067749023438e-05
+MSE: 1226.88623046875
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 1284.6412823200226
+Test time (s): 2.4557113647460938e-05
+MSE: 1252.737060546875
+---SimVP---
+Config: SimVP.py
+Train time (s): 378.0463955402374
+Test time (s): 1.8596649169921875e-05
+MSE: 882.1854248046875
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 1793.5448784828186
+Test time (s): 2.0503997802734375e-05
+MSE: 954.3441162109375

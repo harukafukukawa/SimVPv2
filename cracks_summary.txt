@@ -577,3 +577,17 @@ Config: ConvLSTM.py
 Train time (s): 1793.5448784828186
 Test time (s): 2.0503997802734375e-05
 MSE: 954.3441162109375
+---PredRNNpp---
+Config: PredRNNpp.py
+Killed manually
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 1201.9581530094147
+Test time (s): 1.9550323486328125e-05
+MSE: 809.5965576171875
+---PredRNNpp---
+Config: PredRNNpp.py
+ERROR: See cracks_PredRNNpp_0.0001_err.txt for details
+---SimVP---
+Config: SimVP.py
+Killed manually

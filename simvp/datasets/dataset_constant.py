@@ -35,6 +35,18 @@ dataset_parameters = {
         'aft_seq_length': 1,
         'total_length': 6
     },
+    'lines': {
+        'in_shape': [5, 1, 128, 128],
+        'pre_seq_length': 5,
+        'aft_seq_length': 1,
+        'total_length': 6
+    },
+    'synthetic_cracks': {
+        'in_shape': [5, 1, 128, 128],
+        'pre_seq_length': 5,
+        'aft_seq_length': 1,
+        'total_length': 6
+    },
     'kitticaltech': {
         'in_shape': [10, 3, 128, 160],
         'pre_seq_length': 10,

@@ -75,8 +75,15 @@ def FID(pred, true):
     return np.mean(fids)
 
 
-def metric(pred, true, mean, std, metrics=['mae', 'mse'],
-           clip_range=[0, 1], spatial_norm=False):
+# Calculate the MSE of the prediction against the last input frame
+# Use case: If the prev_frame_mse > mse, then it may indicate that the prediction is not simply trying to reconstruct the last input frame
+def prev_frame_MSE(pred, inputs):
+    inputs = inputs[:,-1,:,:]
+    pred = pred[:,-1,:,:]
+    return np.mean((pred-inputs)**2, axis=(0, 1)).sum()
+
+def metric(pred, true, mean, std, inputs=None, metrics=['mae', 'mse'],
+        clip_range=[0, 1], spatial_norm=False):
     """The evaluation function to output metrics.
 
     Args:
@@ -87,6 +94,7 @@ def metric(pred, true, mean, std, metrics=['mae', 'mse'],
         metric (str | list[str]): Metrics to be evaluated.
         clip_range (list): Range of prediction to prevent overflow.
         spatial_norm (bool): Weather to normalize the metric by HxW.
+        inputs (tensor): The input values for the prediction
     Returns:
         dict: evaluation results
     """
@@ -94,7 +102,7 @@ def metric(pred, true, mean, std, metrics=['mae', 'mse'],
     true = true * std + mean
     eval_res = {}
     eval_log = ""
-    allowed_metrics = ['mae', 'mse', 'rmse', 'ssim', 'psnr', 'fid']
+    allowed_metrics = ['mae', 'mse', 'rmse', 'ssim', 'psnr', 'fid', 'prev_frame_mse']
     invalid_metrics = set(metrics) - set(allowed_metrics)
     if len(invalid_metrics) != 0:
         raise ValueError(f'metric {invalid_metrics} is not supported.')
@@ -110,6 +118,9 @@ def metric(pred, true, mean, std, metrics=['mae', 'mse'],
 
     if 'fid' in metrics:
         eval_res['fid'] = FID(pred, true)
+
+    if 'prev_frame_mse' in metrics and inputs is not None:
+        eval_res['prev_frame_mse'] = prev_frame_MSE(pred, inputs)
 
     pred = np.maximum(pred, clip_range[0])
     pred = np.minimum(pred, clip_range[1])

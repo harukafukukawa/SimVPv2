@@ -591,3 +591,36 @@ ERROR: See cracks_PredRNNpp_0.0001_err.txt for details
 ---SimVP---
 Config: SimVP.py
 Killed manually
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 1728.7665615081787
+Test time (s): 2.0265579223632812e-05
+MSE: 683.9847412109375
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 4677.768891811371
+Test time (s): 3.337860107421875e-05
+MSE: 995.9971923828125
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 3263.8915536403656
+Test time (s): 2.8371810913085938e-05
+MSE: 1135.302734375
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 3533.134256362915
+Test time (s): 2.0503997802734375e-05
+MSE: 1029.444091796875
+---SimVP---
+Config: SimVP.py
+Train time (s): 1134.7582201957703
+Test time (s): 2.86102294921875e-05
+MSE: 542.37939453125
+---SimVP---
+Config: PredRNN
+Train time (s): 329.1695694923401
+Test time (s): 2.3126602172851562e-05
+MSE: 593.39697265625
+---SimVP---
+Config: PredRNN
+Killed manually

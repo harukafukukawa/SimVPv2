@@ -745,3 +745,19 @@ Killed manually
 ---PredRNNv2---
 Config: PredRNNv2.py
 Killed manually
+---SimVP---
+Config: SimVP.py
+ERROR: See cracks_1_err.txt for details
+---SimVP---
+Config: SimVP.py
+Killed manually
+---SimVP---
+Config: SimVP.py
+Train time (s): 41.301249980926514
+Test time (s): 1.9550323486328125e-05
+MSE: 732.5313720703125
+---SimVP---
+Config: SimVP.py
+Train time (s): 41.996963024139404
+Test time (s): 2.1696090698242188e-05
+MSE: 643.6986694335938

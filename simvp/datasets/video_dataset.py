@@ -158,7 +158,7 @@ def make_dataset(video_root, ext, nframes):
                     frames.append(frame)
                     
     # make a list of samples (samples are lists of nframe number of frames from video folder) 
-    for j in range(0, (len(frames)-nframes), nframes):
+    for j in range(0, len(frames), nframes):
         sample = frames[j:j+nframes]
         dataset.append(sample)
 

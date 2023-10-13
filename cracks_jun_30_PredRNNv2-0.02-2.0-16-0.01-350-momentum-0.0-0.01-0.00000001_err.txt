@@ -1,0 +1,21 @@
+[Errno 2] No such file or directory: './data/cracks/train'
+Traceback (most recent call last):
+  File "/home/haruka/code/SimVPv2/tools/non_dist_train.py", line 54, in <module>
+    exp = NonDistExperiment(args)
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 39, in __init__
+    self._preparation()
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 111, in _preparation
+    self._get_data()
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 151, in _get_data
+    self.train_loader, self.vali_loader, self.test_loader = get_dataset(self.args.dataname, self.config)
+  File "/home/haruka/code/SimVPv2/simvp/utils/main_utils.py", line 49, in get_dataset
+    return load_data(**config)
+  File "/home/haruka/code/SimVPv2/simvp/datasets/dataloader.py", line 23, in load_data
+    return load_data(batch_size, val_batch_size, data_root, num_workers, pre_seq_length, aft_seq_length)
+  File "/home/haruka/code/SimVPv2/simvp/datasets/dataloader_cracks.py", line 17, in load_data
+    train_set = Cracks(video_root=train_set_path, video_ext='png',
+  File "/home/haruka/code/SimVPv2/simvp/datasets/dataloader_cracks.py", line 46, in __init__
+    video_names, video_idx = find_videos(video_root)
+  File "/home/haruka/code/SimVPv2/simvp/datasets/video_dataset.py", line 94, in find_videos
+    video_names = [d for d in os.listdir(video_root) if os.path.isdir(os.path.join(video_root, d))]
+FileNotFoundError: [Errno 2] No such file or directory: './data/cracks/train'

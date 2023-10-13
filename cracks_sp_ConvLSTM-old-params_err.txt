@@ -1,0 +1,27 @@
+Unable to find a valid cuDNN algorithm to run convolution
+Traceback (most recent call last):
+  File "/home/haruka/code/SimVPv2/tools/non_dist_train.py", line 56, in <module>
+    exp.train()
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 212, in train
+    num_updates, loss_mean, eta = self.method.train_one_epoch(
+  File "/home/haruka/code/SimVPv2/simvp/methods/predrnn.py", line 53, in train_one_epoch
+    img_gen, loss = self.model(ims, real_input_flag)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/models/convlstm_model.py", line 74, in forward
+    h_t[i], c_t[i] = self.cell_list[i](h_t[i - 1], h_t[i], c_t[i])
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/modules/convlstm_modules.py", line 46, in forward
+    x_concat = self.conv_x(x_t)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Unable to find a valid cuDNN algorithm to run convolution

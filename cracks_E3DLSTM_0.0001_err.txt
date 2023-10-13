@@ -1,0 +1,21 @@
+CUDA out of memory. Tried to allocate 1.25 GiB (GPU 0; 23.67 GiB total capacity; 18.32 GiB already allocated; 481.19 MiB free; 19.42 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Traceback (most recent call last):
+  File "/home/haruka/code/SimVPv2/tools/non_dist_train.py", line 56, in <module>
+    exp.train()
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 212, in train
+    num_updates, loss_mean, eta = self.method.train_one_epoch(
+  File "/home/haruka/code/SimVPv2/simvp/methods/predrnn.py", line 53, in train_one_epoch
+    img_gen, loss = self.model(ims, real_input_flag)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/models/e3dlstm_model.py", line 100, in forward
+    h_t[i], c_t[i], memory = self.cell_list[i](input, h_t[i], c_t[i], memory, c_history[i])
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/modules/e3dlstm_modules.py", line 98, in forward
+    new_cell = c_t + self._attn(r_t, eidetic_cell, eidetic_cell)
+  File "/home/haruka/code/SimVPv2/simvp/modules/e3dlstm_modules.py", line 81, in _attn
+    attn = torch.einsum('bxc,byc->bxy', query, keys)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/functional.py", line 378, in einsum
+    return _VF.einsum(equation, operands)  # type: ignore[attr-defined]
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.25 GiB (GPU 0; 23.67 GiB total capacity; 18.32 GiB already allocated; 481.19 MiB free; 19.42 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

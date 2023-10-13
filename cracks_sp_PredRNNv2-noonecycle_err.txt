@@ -1,0 +1,19 @@
+Unable to find a valid cuDNN algorithm to run convolution
+Traceback (most recent call last):
+  File "/home/haruka/code/SimVPv2/tools/non_dist_train.py", line 71, in <module>
+    eval_res = exp.test(return_all_metrics=return_all_metrics)
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 264, in test
+    inputs, trues, preds = self.method.test_one_epoch(self, self.test_loader)
+  File "/home/haruka/code/SimVPv2/simvp/methods/predrnn.py", line 152, in test_one_epoch
+    img_gen, _ = self.model(test_dat, real_input_flag)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/models/predrnnv2_model.py", line 103, in forward
+    x_gen = self.conv_last(h_t[self.num_layers - 1])
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Unable to find a valid cuDNN algorithm to run convolution

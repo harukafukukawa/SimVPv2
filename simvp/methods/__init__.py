@@ -1,6 +1,7 @@
 # Copyright (c) CAIRI AI Lab. All rights reserved
 
 from .convlstm import ConvLSTM
+from .saconvlstm import SAConvLSTM
 from .crevnet import CrevNet
 from .e3dlstm import E3DLSTM
 from .mau import MAU
@@ -13,6 +14,7 @@ from .simvp import SimVP
 
 method_maps = {
     'convlstm': ConvLSTM,
+    'saconvlstm': SAConvLSTM,
     'crevnet': CrevNet,
     'e3dlstm': E3DLSTM,
     'mau': MAU,
@@ -26,5 +28,5 @@ method_maps = {
 
 __all__ = [
     'method_maps', 'ConvLSTM', 'CrevNet', 'E3DLSTM', 'MAU', 'MIM',
-    'PredRNN', 'PredRNNpp', 'PredRNNv2', 'PhyDNet', 'SimVP',
+    'PredRNN', 'PredRNNpp', 'PredRNNv2', 'PhyDNet', 'SimVP', 'SAConvLSTM',
 ]

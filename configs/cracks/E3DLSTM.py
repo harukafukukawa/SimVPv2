@@ -1,4 +1,4 @@
-method = 'PredRNN'
+method = 'E3DLSTM'
 # reverse scheduled sampling
 reverse_scheduled_sampling = 0
 r_sampling_step_1 = 25000
@@ -13,9 +13,7 @@ sampling_changing_rate = 0.00002
 num_hidden = '128,128,128,128'
 filter_size = 5
 stride = 1
-patch_size = 2
+patch_size = 4
 layer_norm = 0
 # training
 sched = 'onecycle'
-batch_size = 4
-val_batch_size = 4

@@ -50,7 +50,7 @@ class NonDistExperiment(object):
             _tmp_input2 = torch.ones(1, self.args.aft_seq_length, C, H, W).to(self.device)
             _tmp_constraints = torch.zeros((49, 7, 7)).to(self.device)
             input_dummy = (_tmp_input1, _tmp_input2, _tmp_constraints)
-        elif self.args.method in ['convlstm', 'predrnnpp', 'predrnn', 'mim', 'e3dlstm', 'mau']:
+        elif self.args.method in ['convlstm', 'predrnnpp', 'predrnn', 'mim', 'e3dlstm', 'mau', 'saconvlstm']:
             Hp, Wp = H // self.args.patch_size, W // self.args.patch_size
             Cp = self.args.patch_size ** 2 * C
             _tmp_input = torch.ones(1, self.args.total_length, Hp, Wp, Cp).to(self.device)
@@ -208,7 +208,7 @@ class NonDistExperiment(object):
             if self.args.method in ['simvp', 'crevnet', 'phydnet']:
                 num_updates, loss_mean = self.method.train_one_epoch(
                     self, self.train_loader, epoch, num_updates, loss_mean)
-            elif self.args.method in ['convlstm', 'predrnnpp', 'predrnn', 'predrnnv2', 'mim', 'e3dlstm', 'mau']:
+            elif self.args.method in ['convlstm', 'predrnnpp', 'predrnn', 'predrnnv2', 'mim', 'e3dlstm', 'mau', 'saconvlstm']:
                 num_updates, loss_mean, eta = self.method.train_one_epoch(
                     self, self.train_loader, epoch, num_updates, loss_mean, eta)
             else:
@@ -247,6 +247,11 @@ class NonDistExperiment(object):
         print_log('val\t '+eval_log)
         if has_nni:
             nni.report_intermediate_result(eval_res['mse'])
+
+        folder_path = osp.join(self.path, 'saved')
+        check_dir(folder_path)
+        for np_data in ['preds']:
+            np.save(osp.join(folder_path, np_data + '.npy'), vars()[np_data])
 
         return val_loss
 

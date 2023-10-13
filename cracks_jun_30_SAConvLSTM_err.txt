@@ -1,0 +1,23 @@
+CUDA out of memory. Tried to allocate 256.00 MiB (GPU 0; 23.67 GiB total capacity; 19.75 GiB already allocated; 341.38 MiB free; 19.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Traceback (most recent call last):
+  File "/home/haruka/code/SimVPv2/tools/non_dist_train.py", line 71, in <module>
+    eval_res = exp.test(return_all_metrics=return_all_metrics)
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 259, in test
+    inputs, trues, preds = self.method.test_one_epoch(self, self.test_loader)
+  File "/home/haruka/code/SimVPv2/simvp/methods/predrnn.py", line 152, in test_one_epoch
+    img_gen, _ = self.model(test_dat, real_input_flag)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/models/saconvlstm_model.py", line 77, in forward
+    h_t[i], c_t[i], m_t[i] = self.cell_list[i](h_t[i - 1], h_t[i], c_t[i], m_t[i])
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/modules/saconvlstm_modules.py", line 104, in forward
+    h_new, m_new = self.sa(h_new, m_t)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/modules/saconvlstm_modules.py", line 38, in forward
+    Zh = attn(hq.view(N, C, -1), hk.view(N, C, -1), hv.view(N, C, -1))  # (N, S, C)
+  File "/home/haruka/code/SimVPv2/simvp/modules/saconvlstm_modules.py", line 15, in attn
+    scores = query.transpose(1, 2) @ key / math.sqrt(query.size(1))  # (N, S, S)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 256.00 MiB (GPU 0; 23.67 GiB total capacity; 19.75 GiB already allocated; 341.38 MiB free; 19.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

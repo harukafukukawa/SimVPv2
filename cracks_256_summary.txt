@@ -1,0 +1,38 @@
+---SimVP---
+Config: SimVP.py
+ERROR: See cracks_jun_bin_256_SimVP_err.txt for details
+---ConvLSTM---
+Config: ConvLSTM.py
+ERROR: See cracks_jun_bin_256_ConvLSTM_err.txt for details
+---SimVP---
+Config: SimVP.py
+ERROR: See cracks_jun_bin_256_SimVP_err.txt for details
+---PredRNN---
+Config: PredRNN.py
+ERROR: See cracks_jun_bin_256_PredRNN_err.txt for details
+---ConvLSTM---
+Config: ConvLSTM.py
+Killed manually
+---SimVP---
+Config: SimVP.py
+ERROR: See cracks_jun_bin_256_SimVP_err.txt for details
+---SimVP---
+Config: SimVP.py
+ERROR: See cracks_jun_bin_256_SimVP_err.txt for details
+---SimVP---
+Config: SimVP.py
+ERROR: See cracks_jun_bin_256_SimVP_err.txt for details
+---SimVP---
+Config: SimVP.py
+Train time (s): 25304.58452296257
+Test time (s): 1.9073486328125e-05
+MSE: 529.2589111328125
+---ConvLSTM---
+Config: ConvLSTM.py
+ERROR: See cracks_jun_bin_256_ConvLSTM_err.txt for details
+---ConvLSTM---
+Config: ConvLSTM.py
+Killed manually
+---ConvLSTM---
+Config: ConvLSTM.py
+Killed manually

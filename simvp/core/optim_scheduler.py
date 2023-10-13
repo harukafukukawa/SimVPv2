@@ -87,12 +87,17 @@ def get_optim_scheduler(args, epoch, model, steps_per_epoch):
     opt_lower = opt_split[-1]
     if opt_lower == 'sgd' or opt_lower == 'nesterov':
         opt_args.pop('eps', None)
+        opt_args.pop('momentum', None)
+        opt_args.pop('nesterov', None)
         optimizer = optim.SGD(parameters, momentum=args.momentum, nesterov=True, **opt_args)
     elif opt_lower == 'momentum':
         opt_args.pop('eps', None)
         optimizer = optim.SGD(parameters, momentum=args.momentum, nesterov=False, **opt_args)
     elif opt_lower == 'adam':
+        print(f"{opt_args}")
+        print(f"{parameters=}")
         optimizer = optim.Adam(parameters, **opt_args)
+        print(optimizer)
     elif opt_lower == 'adamw':
         optimizer = optim.AdamW(parameters, **opt_args)
     elif opt_lower == 'nadam':

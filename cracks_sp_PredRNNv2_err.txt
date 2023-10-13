@@ -1,0 +1,29 @@
+'Namespace' object has no attribute 'decouple_beta'
+Traceback (most recent call last):
+  File "/home/haruka/code/SimVPv2/tools/non_dist_train.py", line 54, in <module>
+    exp = NonDistExperiment(args)
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 70, in __init__
+    print_log(flop_count_table(flops))
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/fvcore-0.1.5.post20221221-py3.10.egg/fvcore/nn/print_model_statistics.py", line 632, in flop_count_table
+    stats = {params_header: params, flops_header: flops.by_module()}
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/fvcore-0.1.5.post20221221-py3.10.egg/fvcore/nn/jit_analysis.py", line 291, in by_module
+    stats = self._analyze()
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/fvcore-0.1.5.post20221221-py3.10.egg/fvcore/nn/jit_analysis.py", line 551, in _analyze
+    graph = _get_scoped_trace_graph(self._model, self._inputs, self._aliases)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/fvcore-0.1.5.post20221221-py3.10.egg/fvcore/nn/jit_analysis.py", line 176, in _get_scoped_trace_graph
+    graph, _ = _get_trace_graph(module, inputs)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/jit/_trace.py", line 1184, in _get_trace_graph
+    outs = ONNXTracedModule(f, strict, _force_outplace, return_inputs, _return_inputs_states)(*args, **kwargs)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/jit/_trace.py", line 127, in forward
+    graph, out = torch._C._create_graph_by_tracing(
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/jit/_trace.py", line 118, in wrapper
+    outs.append(self.inner(*trace_inputs))
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1212, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1182, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/models/predrnnv2_model.py", line 115, in forward
+    self.configs.decouple_beta * decouple_loss
+AttributeError: 'Namespace' object has no attribute 'decouple_beta'

@@ -15,3 +15,7 @@ filter_size = 5
 stride = 1
 patch_size = 2
 layer_norm = 0
+# training
+sched = 'onecycle'
+batch_size = 4
+val_batch_size = 4

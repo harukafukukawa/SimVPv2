@@ -1,0 +1,27 @@
+CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 23.67 GiB total capacity; 8.04 GiB already allocated; 147.38 MiB free; 8.18 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Traceback (most recent call last):
+  File "/home/haruka/code/SimVPv2/tools/non_dist_train.py", line 56, in <module>
+    exp.train()
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 212, in train
+    num_updates, loss_mean, eta = self.method.train_one_epoch(
+  File "/home/haruka/code/SimVPv2/simvp/methods/predrnn.py", line 53, in train_one_epoch
+    img_gen, loss = self.model(ims, real_input_flag)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/models/predrnnpp_model.py", line 83, in forward
+    h_t[i], c_t[i], memory = self.cell_list[i](h_t[i - 1], h_t[i], c_t[i], memory)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/modules/predrnnpp_modules.py", line 98, in forward
+    c2m = self.conv_c2m(c_new)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 23.67 GiB total capacity; 8.04 GiB already allocated; 147.38 MiB free; 8.18 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

@@ -6,12 +6,13 @@ from .dataloader_moving_mnist import MovingMNIST
 from .dataloader_taxibj import TaxibjDataset
 from .dataloader_weather import ClimateDataset
 from .dataloader_cracks import Cracks
+from .dataloader_cracks_256 import Cracks_256
 from .dataloader_lines import Lines
 from .dataloader_synthetic_cracks import SyntheticCracks
 from .dataloader import load_data
 from .dataset_constant import dataset_parameters
 
 __all__ = [
-    'KittiCaltechDataset', 'KTHDataset', 'MovingMNIST', 'TaxibjDataset', 'ClimateDataset', 'Cracks', 'Lines',
+    'KittiCaltechDataset', 'KTHDataset', 'MovingMNIST', 'TaxibjDataset', 'ClimateDataset', 'Cracks', 'Lines', 'Cracks_256',
     'SyntheticCracks', 'load_data', 'dataset_parameters'
 ]

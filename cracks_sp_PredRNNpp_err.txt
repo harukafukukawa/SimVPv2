@@ -1,0 +1,19 @@
+
+Traceback (most recent call last):
+  File "/home/haruka/code/SimVPv2/tools/non_dist_train.py", line 54, in <module>
+    exp = NonDistExperiment(args)
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 39, in __init__
+    self._preparation()
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 113, in _preparation
+    self._build_method()
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 125, in _build_method
+    self.method = method_maps[self.args.method](self.args, self.device, steps_per_epoch)
+  File "/home/haruka/code/SimVPv2/simvp/methods/predrnnpp.py", line 16, in __init__
+    PredRNN.__init__(self, args, device, steps_per_epoch)
+  File "/home/haruka/code/SimVPv2/simvp/methods/predrnn.py", line 24, in __init__
+    self.model_optim, self.scheduler, self.by_epoch = self._init_optimizer(steps_per_epoch)
+  File "/home/haruka/code/SimVPv2/simvp/methods/base_method.py", line 30, in _init_optimizer
+    return get_optim_scheduler(
+  File "/home/haruka/code/SimVPv2/simvp/core/optim_scheduler.py", line 174, in get_optim_scheduler
+    assert False and "Invalid scheduler"
+AssertionError

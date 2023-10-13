@@ -1,0 +1,46 @@
+---ConvLSTM---
+Config: ConvLSTM.py
+ERROR: See synthetic_cracks_ConvLSTM_err.txt for details
+---CrevNet---
+Config: CrevNet.py
+ERROR: See synthetic_cracks_CrevNet_err.txt for details
+---PredRNNpp---
+Config: PredRNNpp.py
+ERROR: See synthetic_cracks_PredRNNpp_err.txt for details
+---SimVP---
+Config: SimVP
+ERROR: See synth_SimVP_err.txt for details
+---SimVP---
+Config: SimVP
+Train time (s): 1392.7079215049744
+Test time (s): 1.811981201171875e-05
+MSE: 6.773191928863525
+---PredRNN---
+Config: PredRNN.py
+Killed manually
+---ConvLSTM---
+Config: ConvLSTM.py
+Killed manually
+---PredRNNpp---
+Config: PredRNNpp.py
+Killed manually
+---PredRNN---
+Config: PredRNN.py
+Train time (s): 51289.72938466072
+Test time (s): 1.9788742065429688e-05
+MSE: 0.46659886837005615
+---ConvLSTM---
+Config: ConvLSTM.py
+Train time (s): 22087.40691590309
+Test time (s): 2.0742416381835938e-05
+MSE: 0.9913808107376099
+---PredRNNpp---
+Config: PredRNNpp.py
+Train time (s): 33627.28749704361
+Test time (s): 2.288818359375e-05
+MSE: 0.6885899305343628
+---PredRNNv2---
+Config: PredRNNv2.py
+Train time (s): 33197.28855895996
+Test time (s): 2.002716064453125e-05
+MSE: 29.83282470703125

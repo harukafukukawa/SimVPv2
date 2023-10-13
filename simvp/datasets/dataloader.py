@@ -21,6 +21,9 @@ def load_data(dataname, batch_size, val_batch_size, num_workers, data_root, **kw
     elif dataname == 'cracks':
         from .dataloader_cracks import load_data
         return load_data(batch_size, val_batch_size, data_root, num_workers, pre_seq_length, aft_seq_length)
+    elif dataname == 'cracks_256':
+        from .dataloader_cracks_256 import load_data
+        return load_data(batch_size, val_batch_size, data_root, num_workers, pre_seq_length, aft_seq_length)
     elif dataname == 'lines':
         from .dataloader_lines import load_data
         return load_data(batch_size, val_batch_size, data_root, num_workers, pre_seq_length, aft_seq_length)

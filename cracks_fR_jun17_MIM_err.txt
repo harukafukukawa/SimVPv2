@@ -1,0 +1,19 @@
+Sizes of tensors must match except in dimension 1. Expected size 16 but got size 1 for tensor number 1 in the list.
+Traceback (most recent call last):
+  File "/home/haruka/code/SimVPv2/tools/non_dist_train.py", line 56, in <module>
+    exp.train()
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 222, in train
+    vali_loss = self.vali(self.vali_loader)
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 238, in vali
+    preds, trues, val_loss = self.method.vali_one_epoch(self, self.vali_loader)
+  File "/home/haruka/code/SimVPv2/simvp/methods/predrnn.py", line 101, in vali_one_epoch
+    img_gen, loss = self.model(test_dat, real_input_flag)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/models/mim_model.py", line 105, in forward
+    h_t[i], c_t[i], st_memory = self.stlstm_layer[i](
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/haruka/code/SimVPv2/simvp/modules/mim_modules.py", line 133, in forward
+    cell = torch.cat((new_c, new_m), 1)
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 16 but got size 1 for tensor number 1 in the list.

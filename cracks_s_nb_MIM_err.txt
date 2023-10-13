@@ -1,0 +1,43 @@
+Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/haruka/code/SimVPv2/simvp/datasets/video_dataset.py", line 232, in __getitem__
+    video_sample = torch.stack(video_sample, 0)
+RuntimeError: stack expects a non-empty TensorList
+
+Traceback (most recent call last):
+  File "/home/haruka/code/SimVPv2/tools/non_dist_train.py", line 56, in <module>
+    exp.train()
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 222, in train
+    vali_loss = self.vali(self.vali_loader)
+  File "/home/haruka/code/SimVPv2/simvp/api/train.py", line 238, in vali
+    preds, trues, val_loss = self.method.vali_one_epoch(self, self.vali_loader)
+  File "/home/haruka/code/SimVPv2/simvp/methods/predrnn.py", line 83, in vali_one_epoch
+    for i, (batch_x, batch_y) in enumerate(vali_pbar):
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/tqdm/std.py", line 1178, in __iter__
+    for obj in iterable:
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1333, in _next_data
+    return self._process_data(data)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1359, in _process_data
+    data.reraise()
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/haruka/miniconda3/envs/SimVP/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/haruka/code/SimVPv2/simvp/datasets/video_dataset.py", line 232, in __getitem__
+    video_sample = torch.stack(video_sample, 0)
+RuntimeError: stack expects a non-empty TensorList
+

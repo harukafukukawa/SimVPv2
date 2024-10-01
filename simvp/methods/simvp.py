@@ -7,6 +7,7 @@ from timm.utils import AverageMeter
 from simvp.models import SimVP_Model
 from .base_method import Base_method
 
+from .crack_area_mse import CrackAreaMSE
 
 class SimVP(Base_method):
     r"""SimVP
@@ -20,7 +21,8 @@ class SimVP(Base_method):
         Base_method.__init__(self, args, device, steps_per_epoch)
         self.model = self._build_model(self.config)
         self.model_optim, self.scheduler, self.by_epoch = self._init_optimizer(steps_per_epoch)
-        self.criterion = nn.MSELoss()
+#        self.criterion = nn.MSELoss()
+        self.criterion = CrackAreaMSE()
 
     def _build_model(self, config):
         return SimVP_Model(**config).to(self.device)
@@ -61,7 +63,8 @@ class SimVP(Base_method):
             runner.call_hook('before_train_iter')
             pred_y = self._predict(batch_x)
 
-            loss = self.criterion(pred_y, batch_y)
+            # TODO: Try weighting instead of alternating
+            loss = self.criterion(pred_y[:,0,:,:,:], batch_y[:,0,:,:,:])
             loss.backward()
             self.model_optim.step()
             if not self.by_epoch:
@@ -88,7 +91,7 @@ class SimVP(Base_method):
             batch_x, batch_y = batch_x.to(self.device), batch_y.to(self.device)
             runner.call_hook('before_val_iter')
             pred_y = self._predict(batch_x)
-            loss = self.criterion(pred_y, batch_y)
+            loss = self.criterion(pred_y[:,0,:,:,:], batch_y[:,0,:,:,:])
 
             list(map(lambda data, lst: lst.append(data.detach().cpu().numpy()
                                                   ), [pred_y, batch_y], [preds_lst, trues_lst]))

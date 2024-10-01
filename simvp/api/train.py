@@ -118,6 +118,7 @@ class NonDistExperiment(object):
             self.args.resume_from = osp.join(self.checkpoints_path, 'latest.pth')
         if self.args.resume_from is not None:
             self._load(name=self.args.resume_from)
+            print("Resuming from checkpoint")
         self.call_hook('before_run')
 
     def _build_method(self):
@@ -186,15 +187,18 @@ class NonDistExperiment(object):
         try:
             checkpoint = torch.load(filename)
         except:
+            print(f"ERROR loading checkpoint: {filename}")
             return
         # OrderedDict is a subclass of dict
         if not isinstance(checkpoint, dict):
             raise RuntimeError(f'No state_dict found in checkpoint file {filename}')
         self.method.model.load_state_dict(checkpoint['state_dict'])
         if checkpoint.get('epoch', None) is not None:
-            self._epoch = checkpoint['epoch']
+#            self._epoch = checkpoint['epoch']
+            self._epoch = 0
             self.method.model_optim.load_state_dict(checkpoint['optimizer'])
-            self.method.scheduler.load_state_dict(checkpoint['scheduler'])
+#            self.method.scheduler.load_state_dict(checkpoint['scheduler'])
+        print("Loaded checkpoint")
 
     def train(self):
         recorder = Recorder(verbose=True)

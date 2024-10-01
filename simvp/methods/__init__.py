@@ -12,6 +12,8 @@ from .predrnnpp import PredRNNpp
 from .predrnnv2 import PredRNNv2
 from .simvp import SimVP
 
+#from .longest_crack_len import LongestCrackLenMSE
+
 method_maps = {
     'convlstm': ConvLSTM,
     'saconvlstm': SAConvLSTM,

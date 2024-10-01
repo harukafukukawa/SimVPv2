@@ -11,8 +11,9 @@ def load_data(batch_size, val_batch_size, data_root, num_workers=4, pre_seq_leng
     train_set_path = os.path.join(data_root, "cracks/train")
     test_set_path = os.path.join(data_root, "cracks/test")
 
-    transform_video = transforms.Compose([transforms.Resize(
-        size=(128, 128), interpolation=Image.NEAREST), transforms.ToTensor(),])
+    transform_video = transforms.Compose([transforms.ToTensor()])
+#    transform_video = transforms.Compose([transforms.Resize(
+#        size=(128, 128), interpolation=Image.NEAREST), transforms.ToTensor()])
 
     train_set = Cracks(video_root=train_set_path, video_ext='png',
                             nframes=6, loader=video_loader, transform=transform_video)

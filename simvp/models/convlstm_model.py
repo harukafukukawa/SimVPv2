@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 
 from simvp.modules import ConvLSTMCell
+from simvp.methods.crack_area_mse import CrackAreaMSE
 
 
 class ConvLSTM_Model(nn.Module):
@@ -24,7 +25,9 @@ class ConvLSTM_Model(nn.Module):
 
         height = H // configs.patch_size
         width = W // configs.patch_size
-        self.MSE_criterion = nn.MSELoss()
+#        self.MSE_criterion = nn.MSELoss()
+        self.MSE_criterion = CrackAreaMSE()
+        self.criterion = CrackAreaMSE()
 
         for i in range(num_layers):
             in_channel = self.frame_channel if i == 0 else num_hidden[i - 1]
@@ -78,6 +81,6 @@ class ConvLSTM_Model(nn.Module):
 
         # [length, batch, channel, height, width] -> [batch, length, height, width, channel]
         next_frames = torch.stack(next_frames, dim=0).permute(1, 0, 3, 4, 2).contiguous()
-        loss = self.MSE_criterion(next_frames, frames_tensor[:, 1:])
+        loss = self.criterion(next_frames, frames_tensor[:, 1:])
 
         return next_frames, loss

@@ -225,7 +225,8 @@ class VideoFolder(data.Dataset):
         if self.transform is not None:
 #            video_sample = [self.transform(frame) for frame in video_sample]            
             # and make pixel range [-1,1]
-            video_sample = [self.transform(frame).mul(2).add(-1) for frame in video_sample]
+#            video_sample = [self.transform(frame).mul(2).add(-1) for frame in video_sample]
+            video_sample = [self.transform(frame) for frame in video_sample]
             
         # make torch.FloatTensor form video sample
         # video_sample = torch.stack(video_sample, 0).permute(1,0,2,3)
